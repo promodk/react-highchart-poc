@@ -17,3 +17,26 @@ export const lineChartCategory = [
   "Nov",
   "Dec",
 ];
+
+export const donutChartData = [
+  {
+    name: "Community",
+    y: 30,
+  },
+  {
+    name: "Care",
+    y: 10,
+  },
+  {
+    name: "Marketing",
+    y: 20,
+  },
+  {
+    name: "CX team",
+    y: 25,
+  },
+  {
+    name: "Demo Engineering",
+    y: 15,
+  },
+];

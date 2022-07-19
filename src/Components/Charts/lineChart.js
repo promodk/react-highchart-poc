@@ -31,6 +31,11 @@ const LineChart = ({ chartId, chartData, lineChartCategory }) => {
         },
       },
       legend: {
+        // disabled legends
+        enabled: false,
+      },
+      credits: {
+        // Removes the highchart link
         enabled: false,
       },
 
