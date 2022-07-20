@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import "../Styles/App.scss";
 import LineChart from "./Charts/lineChart";
 import DonutChart from "./Charts/donutChart";
@@ -13,8 +13,11 @@ import {
   stackAreaXAxisData,
   sunburstChartData
 } from "../Mocks/mockData";
+interface IProps {
+}
 
-const App = () => {
+
+const App = (props: IProps): React.ReactElement => {
   return (
     <div className="App">
       <div className="top-container">

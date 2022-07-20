@@ -4,13 +4,21 @@ import HighCharts from "highcharts";
 import HighchartsSunburst from "highcharts/modules/sunburst";
 HighchartsSunburst(HighCharts);
 
-const SunburstChart = ({ chartId, chartData }) => {
+export interface IProps {
+  chartId: any;
+  chartData: any;
+}
+
+const SunburstChart = (props: IProps): React.ReactElement => {
+  const { chartId, chartData } = props;
+
   useEffect(() => {
-    const columnOptions = getColumnOptions();
+    const columnOptions: any = getColumnOptions();
     HighCharts.chart(chartId, columnOptions);
   }, [chartId]);
 
-  HighCharts.getOptions().colors.splice(0, 0, "transparent");
+  const HighChart: any = HighCharts;
+  HighChart.getOptions().colors.splice(0, 0, "transparent");
 
   function getColumnOptions() {
     return {
@@ -34,7 +42,7 @@ const SunburstChart = ({ chartId, chartData }) => {
           allowDrillToNode: true,
           cursor: "pointer",
           dataLabels: {
-            formatter: function () {
+            formatter: function (this: any) {
               var shape = this.point.node.shapeArgs;
 
               var innerArcFraction = (shape.end - shape.start) / (2 * Math.PI);

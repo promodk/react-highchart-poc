@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import HighCharts from "highcharts";
 
-const LineChart = ({ chartId, chartData, lineChartCategory }) => {
+export interface IProps {
+  chartId: any;
+  chartData: any;
+  lineChartCategory: any;
+}
+
+const LineChart = (props: IProps): React.ReactElement => {
+  const { chartId, chartData, lineChartCategory } = props;
   useEffect(() => {
-    const columnOptions = getColumnOptions();
+    const columnOptions: any = getColumnOptions();
     HighCharts.chart(chartId, columnOptions);
   }, [chartId]);
 

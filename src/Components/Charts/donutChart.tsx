@@ -1,9 +1,17 @@
 import React, { useEffect } from "react";
 import HighCharts from "highcharts";
 
-const LineChart = ({ chartId, chartData }) => {
+export interface IProps {
+  chartId: any;
+  chartData: any;
+}
+
+const LineChart = (props: IProps): React.ReactElement => {
+
+  const { chartId, chartData } = props
+
   useEffect(() => {
-    const columnOptions = getColumnOptions();
+    const columnOptions: any = getColumnOptions();
     HighCharts.chart(chartId, columnOptions);
   }, [chartId]);
 
@@ -37,7 +45,7 @@ const LineChart = ({ chartId, chartData }) => {
             },
             connectorWidth: 0, // connector is removed
             distance: 20, // distace of the labels from the chart
-            formatter() {
+            formatter(this:any) {
               // formatting for the labels
               return `${this.y}<br> ${this.point.name}`;
             },
