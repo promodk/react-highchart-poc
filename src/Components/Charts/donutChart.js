@@ -10,7 +10,7 @@ const LineChart = ({ chartId, chartData }) => {
   const getColumnOptions = () => {
     return {
       title: {
-        text: "Khoros Employee No.",
+        text: "Khoros Employee No.(Donut Chart)",
       },
       credits: {
         // Removes the highchart link

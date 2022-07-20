@@ -10,7 +10,7 @@ const LineChart = ({ chartId, chartData, lineChartCategory }) => {
   const getColumnOptions = () => {
     return {
       title: {
-        text: "Solutions",
+        text: "Solutions(Line Chart)",
         x: -20, //center
       },
       xAxis: {
@@ -54,6 +54,7 @@ const LineChart = ({ chartId, chartData, lineChartCategory }) => {
       series: [
         {
           data: chartData,
+          color: "#808000",
         },
       ],
     };
